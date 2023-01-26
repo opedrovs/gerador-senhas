@@ -39,6 +39,7 @@ main input[type="text"] {
     padding: 5px;
     margin-bottom: 20px;
     letter-spacing: 1px;
+    border-radius: 2px;
 }
 
 main input[type="text"]:focus {

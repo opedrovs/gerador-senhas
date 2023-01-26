@@ -5,18 +5,17 @@ const numero = () => String.fromCharCode(rand(48, 58));
 const simbolos = '{}[],.;:?!@#$%&*()_+-=';
 const simbolo = () => simbolos[rand(0, simbolos.length - 1)];
 
-export default function geraSenha(qnt, chkMax, chkMin, chkNum, chkSim) {
+export default function geraSenha(qnt, chkMai, chkMin, chkNum, chkSim) {
     const senhaArray = [];
-
     
     for(let i = 0; i < qnt; i++) {
-        const caracGerado = [];
-        chkMai && caracGerado.push(maiuscula());
-        chkMin && caracGerado.push(minuscula());
-        chkNum && caracGerado.push(numero());
-        chkSim && caracGerado.push(simbolo());
+        const caracTemporario = [];
+        chkMai && caracTemporario.push(maiuscula());
+        chkMin && caracTemporario.push(minuscula());
+        chkNum && caracTemporario.push(numero());
+        chkSim && caracTemporario.push(simbolo());
 
-        senhaArray.push(caracGerado[rand(0, caracGerado.length)]);
+        senhaArray.push(caracTemporario[rand(0, caracTemporario.length)]);
     }
 
     return senhaArray.join('');

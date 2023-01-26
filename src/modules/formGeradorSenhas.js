@@ -11,20 +11,20 @@ const gerarSenha = document.querySelector('.gerar-senha');
 const copiarSenha = document.querySelector('.copiar-senha');
 
 export default () => {
-    quantidade.addEventListener('mousemove', () => {
+    quantidade.addEventListener('mousemove', () => { // Mudar os valores dos caracteres exibidos na página 
         rangeValueText.innerHTML = `Tamanho ${quantidade.value} caracteres`;
     });
 
-    gerarSenha.addEventListener('click', () => {
+    gerarSenha.addEventListener('click', () => { // Chamar função para gerar a senha e exibi-lá
         senhaGerada.value = gera();
     });
 
-    copiarSenha.addEventListener('click', () => {
-        copiar();
+    copiarSenha.addEventListener('click', () => { // Chamar função para copiar na área de transferência
+        copyToClipboard();
     });
 };
 
-function gera() {
+function gera() { // Chamar função importada para gerar a senha com base nos parâmetros
     const senha = geraSenha(
         quantidade.value,
         maiusculas.checked,
@@ -36,18 +36,14 @@ function gera() {
     return senha || 'Opção inválida.';
 }
 
-function copiar() {
-    const senha = document.querySelector('.senha-gerada');
-    if(senha.value === 'Opção inválida.' || senha.value.length === 0) {
-        console.error('Não há nenhuma senha para copiar.')
+function copyToClipboard() {
+    if(senhaGerada.value === 'Opção inválida.' || senhaGerada.value.length === 0) {
+        console.error('Não há nenhuma senha para copiar.');
     } else {
-        async function copiaSenha() {
-            try {
-                await navigator.clipboard.writeText(senha.value);
-                console.log('Senha copiada com sucesso para clipboard');
-            } catch(err) {
-                console.error(`Problema ao copiar: ${err}`);
-            }
-        }
+        navigator.clipboard.writeText(senhaGerada.value).then(() => {
+            console.log('Senha copiada com sucesso.');
+        }).catch(err => {
+            console.error(`Ocorreu algum erro: ${err}`);
+        });
     }
 }
