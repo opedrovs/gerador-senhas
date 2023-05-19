@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de senhas | PVSanches</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <main>
+        <h1>Gerador de senhas</h1>
+        
+        <input type="text" class="senha-input">
+
+        <input type="range" class="caracteres-input" min="3" max="50" value="6">
+        <p class="text-discreet">Tamanho <span class="caracteres-text">6</span> caracteres</p>
+
+        <div class="campo">
+            <label for="maiusculas">Letras maiúsculas</label>
+            <input type="checkbox" class="maiusculas" id="maiusculas">
+        </div>
+        <div class="campo">
+            <label for="minusculas">Letras minúsculas</label>
+            <input type="checkbox" class="minusculas" id="minusculas">
+        </div>
+        <div class="campo">
+            <label for="numeros">Números</label>
+            <input type="checkbox" class="numeros" id="numeros">
+        </div>
+        <div class="campo">
+            <label for="simbolos">Símbolos</label>
+            <input type="checkbox" class="simbolos" id="simbolos">
+        </div>
+
+        <button class="btn-gerar">
+            <i class="material-icons">key</i>
+            Gerar
+        </button>
+
+        <button class="btn-copiar">
+            <i class="material-icons">file_copy</i>
+            Copiar
+        </button>
+
+    </main>
+
+</body>
+</html>
+
+<script src="./public/assets/js/bundle.js"></script>

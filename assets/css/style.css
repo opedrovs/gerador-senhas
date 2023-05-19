@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1163df;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+main {
+    background-color: white;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 6px 6px 12px #00000065;
+}
+
+main > h1 {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.senha-input {
+    width: 100%;
+    padding: 8px;
+    font-size: 18px;
+    border: 1px solid #888787;
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.senha-input:focus {
+    outline: 3px solid #1163df3d;
+}
+
+.caracteres-input {
+    width: 100%;
+}
+
+.text-discreet {
+    color: #646464;
+    font-size: 16px;
+}
+
+.campo {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.campo > input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: white;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+button > i.material-icons {
+    font-size: 18px;
+}
+
+.btn-gerar {
+    background-color: #1CA044;
+}
+
+.btn-gerar:hover {
+    background-color: #148335;
+}
+
+.btn-copiar {
+    background-color: #0F90DB;
+}
+
+.btn-copiar:hover {
+    background-color: #0B80C4;
+}
